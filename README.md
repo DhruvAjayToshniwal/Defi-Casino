@@ -39,6 +39,7 @@ The result? "All-In Casino" not only heightens security but also optimizes effic
 - For an overview of our project's vision and design, visit our design page here: [All-In Casino Design](https://www.canva.com/design/DAGMNQvyJSs/pMr3qpymrxGz0QjALwkiGw/edit?utm_content=DAGMNQvyJSs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - The frontend login feature of our application is based on an existing implementation by KSmith8888, available on GitHub: [TypeScript Blackjack](https://github.com/KSmith8888/TypeScript-Blackjack). This adaptation was communicated and agreed upon with Luka.
 - Google Drive (Blockchain Files): [Polkadot Blockchain Files](https://drive.google.com/drive/folders/1TjU00GYhEBNx6AC-kaCcQw2WLMLFUIL7?usp=sharing)
+- Video Demo (All-in Code, Slide Deck and Video demonstration): [All-In Video](https://drive.google.com/drive/folders/1lEvlUxsVCejcdu-vPo6jm6YKJs3piohW?usp=sharing)
 
 ## Images
 
