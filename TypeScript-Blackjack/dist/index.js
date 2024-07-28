@@ -138,14 +138,10 @@ class Game {
     activateSelections() {
         this.hitButton.disabled = false;
         this.stayButton.disabled = false;
-        if (this.player.money >= this.player.currentBet) {
-            this.doubleDownBtn.disabled = false;
-        }
     }
     disableSelections() {
         this.hitButton.disabled = true;
         this.stayButton.disabled = true;
-        this.doubleDownBtn.disabled = true;
     }
     drawCard(currentTurn, currentSection) {
         if (this.deck.cards.length < 1) {

@@ -14,7 +14,6 @@ class Game {
     resetSection: HTMLElement;
     hitButton: HTMLButtonElement;
     stayButton: HTMLButtonElement;
-    doubleDownBtn: HTMLButtonElement;
     gameResultText: HTMLParagraphElement;
     rulesModal: HTMLDialogElement;
     openRulesBtn: HTMLButtonElement;
@@ -45,9 +44,6 @@ class Game {
         );
         this.stayButton = <HTMLButtonElement>(
             document.querySelector("#stay-button")
-        );
-        this.doubleDownBtn = <HTMLButtonElement>(
-            document.querySelector("#double-down-button")
         );
         this.gameResultText = <HTMLParagraphElement>(
             document.querySelector("#game-result-text")
@@ -89,24 +85,6 @@ class Game {
         this.stayButton.addEventListener("click", () => {
             this.disableSelections();
             this.initiateDealerTurn();
-        });
-        this.doubleDownBtn.addEventListener("click", () => {
-            this.disableSelections();
-            setTimeout(() => {
-                if (this.player.money >= this.player.currentBet) {
-                    this.dealCardSound.play().catch((err) => {
-                        console.error(err);
-                    });
-                    this.player.money -= this.player.currentBet;
-                    this.player.currentBet = this.player.currentBet * 2;
-                    this.player.totalMoneyText.textContent =
-                        this.player.money.toString();
-                    this.drawCard(this.player, this.playerSection);
-                    if (this.player.total <= 21) {
-                        this.initiateDealerTurn();
-                    }
-                }
-            }, 750);
         });
         this.openRulesBtn.addEventListener("click", () => {
             this.rulesModal.showModal();
@@ -198,21 +176,16 @@ class Game {
         this.gameResultText.textContent = "";
         this.playerScoreText.textContent = "0";
         this.dealerScoreText.textContent = "0";
-        //Needed in case of bust on double down because dealers turn is never initiated
         this.dealerFaceDownCard.style.display = "none";
         this.player.activateBets();
     }
     activateSelections(): void {
         this.hitButton.disabled = false;
         this.stayButton.disabled = false;
-        if (this.player.money >= this.player.currentBet) {
-            this.doubleDownBtn.disabled = false;
-        }
     }
     disableSelections(): void {
         this.hitButton.disabled = true;
         this.stayButton.disabled = true;
-        this.doubleDownBtn.disabled = true;
     }
     drawCard(currentTurn: Player | Dealer, currentSection: HTMLElement): void {
         if (this.deck.cards.length < 1) {
