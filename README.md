@@ -38,3 +38,16 @@ The result? "All-In Casino" not only heightens security but also optimizes effic
 
 - For an overview of our project's vision and design, visit our design page here: [All-In Casino Design](https://www.canva.com/design/DAGMNQvyJSs/pMr3qpymrxGz0QjALwkiGw/edit?utm_content=DAGMNQvyJSs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - The frontend login feature of our application is based on an existing implementation by KSmith8888, available on GitHub: [TypeScript Blackjack](https://github.com/KSmith8888/TypeScript-Blackjack). This adaptation was communicated and agreed upon with Luka.
+
+## Images
+
+Below are the images used in our project, located in the `img` directory:
+
+- ![Database Table](img/Database%20Table.jpg) - Database Table
+- ![First Hand](img/FirstHand.jpg) - First Hand
+- ![Hit](img/Hit.jpg) - Hit
+- ![Landing Page](img/LandingPage.jpg) - Landing Page
+- ![Login Page](img/LoginPage.jpg) - Login Page
+- ![Lost](img/Lost.jpg) - Lost
+- ![Rules](img/Rules.jpg) - Rules
+- ![Wallet Connected](img/WalletConnected.jpg) - Wallet Connected
