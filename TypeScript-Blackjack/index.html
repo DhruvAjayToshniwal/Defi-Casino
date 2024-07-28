@@ -54,6 +54,10 @@
             <button id="close-rules-button">Close</button>
         </dialog>
         <header id="header-section">
+            <div id="user-info">
+                <p id="username">Hello, User</p>
+                <button id="wallet-button">Connect Wallet</button>
+            </div>
             <button id="open-rules-button">Game Rules</button>
             <h1 id="main-header">TypeScript Blackjack</h1>
             <img
@@ -111,5 +115,20 @@
                 </div>
             </section>
         </main>
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                const username = "User";
+                document.getElementById('username').textContent = `Hello, ${username}`;
+
+                // Wallet connection logic
+                document.getElementById('wallet-button').addEventListener('click', () => {
+                    // Simulate wallet connection
+                    alert('Wallet connected! You can now redeem house coins.');
+                    const usdAmount = 100;
+                    const houseCoins = usdAmount * 4;
+                    alert(`You have redeemed ${houseCoins} house coins.`);
+                });
+            });
+        </script>
     </body>
 </html>

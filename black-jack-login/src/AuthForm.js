@@ -5,6 +5,7 @@ function AuthForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLogin, setIsLogin] = useState(true); // true for login, false for register
+    const [message, setMessage] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,16 +26,18 @@ function AuthForm() {
             return response.json();
         })
         .then(data => {
-            alert(`Success: ${JSON.stringify(data)}`);
+            setMessage(`Success: ${isLogin ? 'Logged in successfully' : 'Registered successfully'}`);
             console.log('Success:', data);
             if (!isLogin) {
                 setIsLogin(true); // Automatically switch to login after registration
             } else {
-                window.location.href = 'http://localhost:8000'; // Redirect to the external landing page
+                setTimeout(() => {
+                    window.location.href = 'http://localhost:8000'; // Redirect to the external landing page
+                }, 1000);
             }
         })
         .catch(error => {
-            alert(`Error: ${error}`);
+            setMessage(`Error: ${error.message}`);
             console.error('Error:', error);
         });
     };
@@ -43,6 +46,7 @@ function AuthForm() {
         <div className="auth-container">
             <h1>{isLogin ? 'Login' : 'Register'}</h1>
             <form onSubmit={handleSubmit} className="auth-form">
+                {message && <p className="message">{message}</p>}
                 <label>
                     Email:
                     <input 
@@ -63,14 +67,14 @@ function AuthForm() {
                 </label>
                 <button type="submit" className="auth-button">{isLogin ? 'Login' : 'Register'}</button>
                 <div className="auth-switch">
-                    <button className="forgot-password-button">Forgot your password?</button>
+                    <button type="button" className="forgot-password-button">Forgot your password?</button>
                 </div>
             </form>
             <div className="auth-footer">
                 {isLogin ? (
-                    <span>Don't have an account? <button className="signup-button" onClick={() => setIsLogin(false)}>Sign up</button></span>
+                    <span>Don't have an account? <button type="button" className="signup-button" onClick={() => setIsLogin(false)}>Sign up</button></span>
                 ) : (
-                    <span>Already have an account? <button className="signup-button" onClick={() => setIsLogin(true)}>Login</button></span>
+                    <span>Already have an account? <button type="button" className="signup-button" onClick={() => setIsLogin(true)}>Login</button></span>
                 )}
             </div>
         </div>
