@@ -1,3 +1,4 @@
 *node_modules/*
 .env
-*TypeScript-Blackjack
+TypeScript-Blackjack/*node_modules
+TypeScript-Blackjack/.github
